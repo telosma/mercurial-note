@@ -86,7 +86,7 @@ hg status -r | show removed files only
 hg status -a | show added files only
 hg strip "0000" | remove commit from history and delete changes before push, if pushed you are fucked
 hg log -u email@accout.com | see all account commits &#124; type -v for a verbose version
-hg diff -r source_branch(source_rev):target_branch(target_rev) /dir/location/path | Diff versions of same file from different CHANGESET <br>Show what was change in `source_revision` different from `target_revision`
+hg diff -r source_branch(source_rev):target_branch(target_rev) /dir/location/path | Diff versions of same file from different CHANGESET <br>Show what was changed in `target_revision` different from `source_revision`
 hg diff &#124; less; hg commit | show changes committed
 hg out | See what is not pushed to remote branch
 hg update 0000 | CHANGESET = 0000 or branchname
