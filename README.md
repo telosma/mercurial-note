@@ -30,6 +30,32 @@
 	- Git
 	- Mercurial
 
+### Tips
+
+- Merge conflict
+  If you are not familiar with vim diff mode but git. You can add some config below inside`.hg/hgrc` config file for that.
+	```
+	[ui]
+	merge = internal:merge
+	```
+
+- Rebase like git
+   By default Mercurial `hg rebase` is disabled in mercurial. You can enable it by add to `hgrc`
+	 ```
+	 [extensions]
+	 rebase =
+	 ```
+	 But we wonder that why mercurial do that so I encourage we should use `merge` instead.
+
+ - Colorize output from commands like `diff` or `status`
+	 default color for commands like `diff` just have *black* and *white* for example. So add `color` extension makes it more pretty
+	 ```
+	 [extensions]
+	 color =
+	 ```
+
+ - mq: updating
+
 ### Command
 
 Commands | Description
