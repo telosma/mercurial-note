@@ -32,18 +32,19 @@
 
 ### Command
 
-Commands | Description | Example
--------- | ----------- | ---------
-hg pull | Pull changes from a remote repository to a local one like git pull | if repo in from ssh server: <br> hg pull ssh://example.com//var/www/path/to/project <br> hg pull -b branchname
-hg add [option].. [file].. | add the specified new files on the next commit | hg add filename.ext
-hg forget | undo an add before that, only from current branch and does not delete them | |
-hg remove | delete the file from the working directory | |
-hg revert | undo a remove before that | |
-hg rollback | roll back the last transaction (DANGEROUS) (DEPRECATED) <br> use 'hg commit --amend' instead of rollback to correct mistakes in the last commit. There is no way to undo a rollback | |
-hg commit | add changes to commit with -m for message just like git | hg commit -m "message for commit"
-hg addremove | adds new files and removes file not in your file system | |
-hg incoming | see changes committed by others | hg incoming -r revision --stat |
-hg outgoing | see local commits, show changesets not found in the destination | |
+Commands | Description
+-------- | -----------
+hg pull | Pull changes from a remote repository to a local one like git pull
+hg pull ssh://example.com//path2repo -b branchname | pull branchname from ssh server
+hg add [option].. [file].. | add the specified new files on the next commit
+hg forget | undo an add before that, only from current branch and does not delete them
+hg remove | delete the file from the working directory
+hg revert | undo a remove before that
+hg rollback | roll back the last transaction (DANGEROUS) (DEPRECATED) <br> use 'hg commit --amend' instead of rollback to correct mistakes in the last commit. There is no way to undo a rollback
+hg commit | add changes to commit with -m for message just like git
+hg addremove | adds new files and removes file not in your file system
+hg incoming | see changes committed by others
+hg outgoing | see local commits, show changesets not found in the destination
 hg commit --amend | same as ```git commit --amend```
 hg record filename | shows history of changes to file uses extension
 hg merge | like a ```git merge``` http://hgbook.red-bean.com/read/a-tour-of-mercurial-merging-work.html
