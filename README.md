@@ -3,6 +3,7 @@
 - [Theory](#theory)
 - [Tip](#tip)
 - [Command](#command)
+- [Simple Flow](#simple-flow)
 ### Overview
 
 - backups
@@ -104,3 +105,47 @@ hg identify --num | current changeset
 hg branch feature | go to default branch and use this command to create a new branch namded "feature" based off of it
 hg commit --close-branch -m 'closing this branch' | Inside branch you want to close commit this and push so branch disapears and keeps your coworkers happy
 note | Hg .hgignore, syntax: glob is the same behaviour as git's .gitignore.
+
+### Simple Flow
+
+- Create a new repository
+	move current path to your project folder and
+	```$ hg init```
+
+- Clone soure code
+	```$ hg clone /path/to/repo```
+	ex: ```$ hg push https://bitbucket.org/ArneBab/hello/```
+	when using a remote server via ssh
+	```$ hg clone username@host:/path/to/repo```
+
+- Unlike git which maintain three "trees" (working dir - index - head) in your local repository, hg handles it automatically so user no need to deal with it.
+
+- Add & commit
+	You can do the same things with add and commit with hg like git but one thing notice that hg add only add unknown files ( new files).
+	```$ hg add file```
+	```$ hg add```
+
+	use ```$ hg parents``` to see the currently checked out revision (or changeset)
+
+	commit all changes into a new changeset(HEAD) and edit changelog entry
+	```$ hg commit -m "message for commit"```
+
+- Pushing changes
+	Your changes are noew in the `HEAD` of your local working. To send those changes to your remote repository, execute
+	```$ hg push```
+	to push to specific branch
+	```$ hg push -b branch-name```
+	either which branch you want to push has not exist on remote reposiory use
+	```$ hg push --new-branch -b branch-name```
+
+	If you have not cloned from an existing repository and want to connect your repository to a remote server you need to add it in .hg/hgrc
+	```
+	[paths]
+	default = <server>
+	```
+
+	- Branching
+	- Update & Merge
+	- Tagging
+	- Log
+	- Undo somethings
