@@ -1,3 +1,8 @@
+### Table of Content
+- [Overview](#overview)
+- [Theory](#theory)
+- [Tip](#tip)
+- [Command](#command)
 ### Overview
 
 - backups
@@ -30,7 +35,7 @@
 	- Git
 	- Mercurial
 
-### Tips
+### Tip
 
 - Merge conflict
   If you are not familiar with vim diff mode but git. You can add some config below inside`.hg/hgrc` config file for that.
@@ -54,7 +59,7 @@
 	 color =
 	 ```
 
- - mq: updating
+ - mq: UPDATING
 
 ### Command
 
