@@ -82,6 +82,7 @@ hg record filename | shows history of changes to file uses extension
 hg merge | like a ```git merge``` http://hgbook.red-bean.com/read/a-tour-of-mercurial-merging-work.html
 hg log -r tip | tip changelog
 hg log -l 5 | last 5 changelog statuses
+hg log -p -r revision number | show what was changed in this revision |
 hg status -m | show modified files only
 hg status -r | show removed files only
 hg status -a | show added files only
