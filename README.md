@@ -145,8 +145,46 @@ note | Hg .hgignore, syntax: glob is the same behaviour as git's .gitignore.
 	default = <server>
 	```
 
-	- Branching
-	- Update & Merge
-	- Tagging
-	- Log
-	- Undo somethings
+- Branching
+	Branches are used to develop features isolated from each other. Default branch like `master` branch in Git when use create your repository. Create new branch for development and merge it back to parent branch when developing.
+	```
+	$ hg branch feature_x
+	$ hg commit -m "commit feature_x branch"
+	```
+	. Switch back to default branch and merge `feature_x`
+	```
+	$ hg update default
+	$ hg merge feature_x
+	```
+	. After feature_x was merge you should close `feature_x`
+	```
+	$ hg update feature_x
+	$ hg commit -m "close feature_x" --close-branch
+	```
+	. To make your branch available with others you need to push it to repository
+	```
+	$ hg push -b branch-name
+	# if your branch you want to push does not exist
+	$ hg push --new-branch -b branch-name
+	```
+- Update & Merge
+	. To update your local repository to the newest commit, execute
+	```
+	$ hg pull
+	```
+	. To merge another branch into your active branch, use
+	```
+	$ hg merge branch-name
+	```
+	. Run ```$ hg update``` to update your working directory or switch version
+	. You can run use ```hg diff```(check on [Command](#command)) to see what changes before merge
+- Tagging
+  When you have a release version of project. You can mark it with tag and make easy for check after
+	```
+	$ hg tag -r revision_number 1.0.0
+	$ hg tag 1.0.0
+	```
+- Log
+	Show revision history of entire repository or files. This is useful feature which I usually use.
+- Undo somethings
+	Check on [Command](#command) about revert and forgot.
