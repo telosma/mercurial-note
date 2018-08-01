@@ -62,6 +62,17 @@
 
  - mq: UPDATING
 
+ - Ignore hg file changes mode
+ 	Edit hgrc in /etc/mercurial/hgrc
+	```
+	[hooks]
+	pre-commit = hg locate --print0 | xargs -0 chmod a-x
+	```
+ - Trusted one user
+	```
+	[trusted]
+	users = root
+	```
 ### Command
 
 Commands | Description
