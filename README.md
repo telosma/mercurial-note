@@ -60,6 +60,13 @@
 	 color =
 	 ```
 
+ - ammend public changesets
+    When you push your changesets to repo, after that you want to have a little bit fix code and commit amend you will get "abort: cannot amend public changesets". You can solve it by making current commit from **public** to **draft**
+		```
+		hg phase --draft --force .
+		hg commit --amend
+		```
+
  - mq: UPDATING
 
  - Ignore hg file changes mode
